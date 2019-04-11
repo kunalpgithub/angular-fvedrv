@@ -1,0 +1,16 @@
+<div *ngIf="currentQuestion" class="flex-container">
+  <h2>Questions</h2>
+  <label> {{currentQuestion.text}}</label>
+    <div class="optionContainer">
+      <label *ngFor="let option of currentQuestion.options" class="optionText" >
+        <input type="radio" name="{{currentQuestion.id}}" (click)="selectedAnswer(option)" required> 
+          {{option.text}}
+      </label>
+      <span *ngIf="showError" class="error">Please answer question.</span>
+    </div>
+
+    <button (click)="submitAnswer()" type="button">Submit</button>
+</div>
+<div *ngIf="!currentQuestion" class="flex-container">
+        You have scored total {{totalScore}} points.
+</div>
