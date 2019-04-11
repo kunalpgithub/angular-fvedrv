@@ -33,6 +33,7 @@ export class QuestionComponent implements OnInit {
     if (!this.selectedOption) { this.showError = true; } else {
       this.totalScore += this.selectedOption.isAnswer ? 1 : 0;
       this.nextQuestion();
+      this.selectedOption = null;
       this.showError = false;
     }
 
