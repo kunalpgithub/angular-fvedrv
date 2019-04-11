@@ -1,0 +1,19 @@
+<p>
+  {{welcomeMessage | uppercase}}
+  <button (click)="onStart()" [class.selected]="startQuiz" >Start Quiz</button>
+</p>
+<div *ngIf="startQuiz && currentQuestion">
+<h2>Questions</h2>
+    <label> {{currentQuestion.text}}</label>
+    <ul>
+      <li *ngFor="let option of currentQuestion.options">
+        <label>
+            <input type="radio" name="{{currentQuestion.id}}" (click)="selectedAnswer(option.id)" > <small> {{option.text}}</small>
+        </label>
+      </li>
+    </ul>
+    <button (click)="submitAnswer()" type="button" >Submit</button>
+</div>
+<div *ngIf="!currentQuestion">
+ You have scored total {{totalScore}} points.
+</div>

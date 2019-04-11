@@ -1,0 +1,9 @@
+.questions{
+    font-weight: 700;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: large;
+
+}
+.selected{
+    background-color: cadetblue;
+}
